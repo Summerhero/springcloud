@@ -1,18 +1,18 @@
-package com.summer.springcloud.dao;
+package com.summer.springcloud.service;
 
+import com.summer.springcloud.dao.PaymentDao;
 import com.summer.springcloud.entries.Payment;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author summer
- * @create 2023-03-04 17:26
- * @Description 支付Dao
- */
-//@Repository   被Mapper替代
-//@Mapper
-public interface PaymentDao {
+import javax.annotation.Resource;
 
+/**
+ * @Author Summer
+ * @Date 2023/3/5 12:47
+ * @Version 1.0
+ * @Descrption
+ */
+public interface PaymentService {
     /**
      * 新增支付信息
      * @param payment   支付对象
@@ -26,5 +26,4 @@ public interface PaymentDao {
      * @return      支付信息
      */
     public Payment queryPaymentById(@Param("id")  Long id);
-
 }
