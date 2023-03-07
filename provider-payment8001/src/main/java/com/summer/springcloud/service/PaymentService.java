@@ -25,5 +25,5 @@ public interface PaymentService {
      * @param id    支付ID
      * @return      支付信息
      */
-    public Payment queryPaymentById(@Param("id")  Long id);
+    public Payment queryPaymentById(Long id);
 }

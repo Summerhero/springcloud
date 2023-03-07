@@ -3,10 +3,11 @@
 
 <mapper namespace="com.summer.springcloud.dao.PaymentDao">
 
+    <select id="queryPaymentById" resultType="Payment" parameterType="Long">
+        select id,serial from payment where id = #{id};
+    </select>
+
     <insert id="add" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
-
+        insert into payment(serial) values(#{serial});
     </insert>
-
-
-
 </mapper>
