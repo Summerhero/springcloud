@@ -1,7 +1,9 @@
-package com.summer.springcloud.service;
+package com.summer.springcloud.service.impl;
 
 import com.summer.springcloud.dao.PaymentDao;
 import com.summer.springcloud.entries.Payment;
+import com.summer.springcloud.service.PaymentService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
@@ -11,6 +13,7 @@ import javax.annotation.Resource;
  * @Version 1.0
  * @Descrption
  */
+@Service
 public class PaymentServiceImpl implements PaymentService {
 
     @Resource
