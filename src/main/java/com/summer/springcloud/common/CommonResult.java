@@ -1,14 +1,13 @@
 package com.summer.springcloud.common;
 
-import lombok.Data;
+import javax.annotation.Resource;
 
 /**
- * @Author Summer
- * @Date 2023/3/5 12:54
- * @Version 1.0
- * @Descrption
+ * @author summer
+ * @create 2023-03-08 12:46
+ * @Description
  */
-@Data
+@Resource
 public class CommonResult<T> {
 
     // 返回码

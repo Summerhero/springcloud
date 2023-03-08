@@ -21,7 +21,6 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public int add(Payment payment) {
-        System.out.println("-- Seriver -- " + payment.toString());
         return paymentDao.add(payment);
     }
 

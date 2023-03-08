@@ -1,5 +1,6 @@
 package com.summer.springcloud.controller;
 
+
 import com.summer.springcloud.common.CommonResult;
 import com.summer.springcloud.entries.Payment;
 import com.summer.springcloud.service.PaymentService;
@@ -25,8 +26,7 @@ public class PaymentController {
      * @return  1 成功 反之失败
      */
     @PostMapping("/payment/add")
-    public CommonResult add(Payment payment){
-        System.out.println("-- Controller -- " + payment.toString());
+    public CommonResult add(@RequestBody Payment payment){
         // 参数校验 TODO
         int rowNums = paymentService.add(payment);
         if(rowNums < 1){
@@ -40,14 +40,13 @@ public class PaymentController {
      * @param id    支付ID
      * @return      支付信息
      */
-    @GetMapping("/payment/getById")
-    public CommonResult queryPaymentById(@Param("id")  Long id){
+    @GetMapping("/payment/get/{id}")
+    public CommonResult queryPaymentById(@PathVariable("id")  Long id){
         // 参数校验 TODO
         Payment payment = paymentService.queryPaymentById(id);
         if(null == payment){
             return new CommonResult<>(500,"查询失败，ID：" + id);
         }
-        System.out.println(payment);
         return new CommonResult<>(200,"查询成功，ID：" + id,payment);
     }
 }
